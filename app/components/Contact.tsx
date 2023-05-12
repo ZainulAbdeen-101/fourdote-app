@@ -1,26 +1,12 @@
 "use client";
+import { Formik } from "formik";
+import { METHODS } from "http";
+import { json } from "stream/consumers";
 
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 
-import { formValues } from "@/types/types";
 const Contacts = async () => {
-  const form = useForm<formValues>({
-    mode: "onTouched",
-  });
-  const { register, handleSubmit } = form;
+  
 
-  const onSubmit = async (data: formValues) => {
-    console.log(data);
-
-    const res = await fetch("http://localhost:3000/api/hello", {
-      method: "POST",
-
-      body: JSON.stringify(data),
-    });
-    const resData = await res.json();
-    console.log(resData);
-  };
 
   return (
     <>
@@ -34,7 +20,27 @@ const Contacts = async () => {
               Got a technical issue? Want to send feedback about a beta feature?
               Need details about our Business plan? Let us know.
             </p>
-            <form onSubmit={()=>handleSubmit(onSubmit)} className="space-y-8">
+
+<Formik initialValues={{
+  email:'',
+  subject:'',
+  message:'',
+
+}} 
+onSubmit={async ( values,actions) =>{
+const res = await fetch("/api/hello",{
+  method:"POST",
+  body:JSON.stringify(values)
+  
+},
+
+) 
+const resdata=await res.json()
+console.log(resdata)
+}}
+
+>
+{props => <form  onSubmit={props.handleSubmit} className="space-y-8">
               <div>
                 <label
                   htmlFor="email"
@@ -45,7 +51,10 @@ const Contacts = async () => {
                 <input
                   type="email"
                   id="email"
-                  {...register("email")}
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.email}
+               
                   placeholder="name@fourdote.com"
                   className="block p-3 w-full text-sm rounded-lg border border-[#4B33C6] shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 />
@@ -60,7 +69,9 @@ const Contacts = async () => {
                 <input
                   type="text"
                   id="subject"
-                  {...register("subject")}
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.subject}
                   className="block p-3 w-full text-sm rounded-lg border  border-[#4B33C6] shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="Let us know how we can help you"
                 />
@@ -74,7 +85,9 @@ const Contacts = async () => {
                 </label>
                 <textarea
                   id="message"
-                  {...register("message")}
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.message}
                   rows={3}
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border  border-[#4B33C6] focus:ring-primary-500 focus:border-primary-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Leave a comment..."
@@ -86,7 +99,9 @@ const Contacts = async () => {
               >
                 Submit
               </button>
-            </form>
+            </form>}
+</Formik>
+          
           </div>
         </section>
       </div>
