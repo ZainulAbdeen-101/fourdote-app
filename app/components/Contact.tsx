@@ -13,7 +13,7 @@ const Contacts = async () => {
   const onSubmit = async (data: formValues) => {
     console.log(data);
 
-    const res = await fetch("/api/hello", {
+    const res = await fetch("http://localhost:3000/api/hello", {
       method: "POST",
 
       body: JSON.stringify(data),
