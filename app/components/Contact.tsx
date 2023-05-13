@@ -29,6 +29,7 @@ const Contacts =  () => {
 onSubmit={async ( values,actions) =>{
 const res = await fetch("/api/hello",{
   method:"POST",
+  cache:"no-store",
   body:JSON.stringify(values)
   
 },
