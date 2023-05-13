@@ -9,7 +9,8 @@ export  async function POST(request:NextRequest){
         subject,
         message
     }:formValues=await request.json()
-    const result=await sql`CREATE TABLE formDatas (email varchar,subject varchar,message varchar);`
-
-    return NextResponse.json({result})
+    
+    const result1=await sql`INSERT INTO formDatas (email,subject,message) VALUES (${email},${subject},${message}) returning *` 
+// const result1=await sql`DELETE FROM formdatas WHERE message='asdfsdf'`
+    return NextResponse.json({result1})
 }

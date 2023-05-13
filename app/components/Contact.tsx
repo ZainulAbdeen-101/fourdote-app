@@ -1,10 +1,9 @@
 "use client";
 import { Formik } from "formik";
-import { METHODS } from "http";
-import { json } from "stream/consumers";
 
 
-const Contacts = async () => {
+
+const Contacts =  () => {
   
 
 
