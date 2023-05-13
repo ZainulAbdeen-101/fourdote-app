@@ -23,7 +23,7 @@ const Mains = () => {
             height={300}
             width={300}
           />
-          <div className="p-3">
+          <div className="p-5">
             <div className=" p-2 min-[320px]:h-[180px] md:h-[200px] shadow-lg shadow-[#6C58D4]/50 rounded-lg text-center text-white  bg-opacity-80 bg-gradient-to-b from-[#4B33C6] to-[#6C58D4]">
               <h1 className="font-font  min-[320px]:text-[30px] lg:text-[40px]">
                 Design{" "}
@@ -36,7 +36,7 @@ const Mains = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="p-5">
           <Image
             className="mx-auto"
             src={"/development.png"}
@@ -44,7 +44,7 @@ const Mains = () => {
             height={300}
             width={300}
           />
-          <div className="p-3">
+          <div className="mt-5">
             <div className=" p-2 min-[320px]:h-[180px] md:h-[200px] shadow-lg shadow-[#6C58D4]/50 rounded-lg text-center text-white  bg-opacity-80 bg-gradient-to-b from-[#4B33C6] to-[#6C58D4]">
               <h1 className="font-font  min-[320px]:text-[30px] lg:text-[40px]">
                 Development{" "}
@@ -56,7 +56,7 @@ const Mains = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="p-5">
           <Image
             className="mx-auto"
             src={"/cms.png"}
@@ -64,7 +64,7 @@ const Mains = () => {
             height={300}
             width={300}
           />
-          <div className="p-3">
+          <div className="mt-5">
             <div className=" p-2 min-[320px]:h-[180px] md:h-[200px] shadow-lg shadow-[#6C58D4]/50 rounded-lg text-center text-white  bg-opacity-80 bg-gradient-to-b from-[#4B33C6] to-[#6C58D4]">
               <h1 className="font-font  min-[320px]:text-[30px] lg:text-[40px]">
                 CMS{" "}
@@ -76,7 +76,7 @@ const Mains = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="p-5">
           <Image
             className="mx-auto"
             src={"/database.png"}
@@ -84,7 +84,7 @@ const Mains = () => {
             height={300}
             width={300}
           />
-          <div className="p-3">
+          <div className="mt-5">
             <div className=" p-2 min-[320px]:h-[150px] md:h-[200px] shadow-lg shadow-[#6C58D4]/50 rounded-lg text-center text-white  bg-opacity-80 bg-gradient-to-b from-[#4B33C6] to-[#6C58D4]">
               <h1 className="font-font  min-[320px]:text-[30px] lg:text-[40px]">
                 DataBase{" "}

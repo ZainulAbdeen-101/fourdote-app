@@ -6,7 +6,7 @@ const Timeline = () => {
     <>
       <div className="mt-[50px]">
         {/* <!-- component --> */}
-        <div className="container md:p-6 lg:p-0  mx-auto w-full h-full">
+        <div className="container md:p-6 lg:p-14  mx-auto w-full h-full">
           <div className="relative wrap overflow-hidden  h-full">
             <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border left-[50%]"></div>
             {/* <!-- right timeline --> */}

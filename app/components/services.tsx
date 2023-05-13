@@ -4,7 +4,7 @@ import { SiAntdesign, HiCodeBracket, BsDatabaseAdd } from "./Icons";
 const Services = () => {
   return (
     <>
-      <div className="min-[320px]:p-3 md:p-14">
+      <div className="min-[320px]:p-5 md:p-14">
         <div className={" mx-auto md:max-w-[550px] text-center"}>
           <h1 className="font-font min-[320px]:text-[30px] md:text-[50px] text-[#4B33C6] ">Services</h1>{" "}
           <p className="font-light md:text-lg">
