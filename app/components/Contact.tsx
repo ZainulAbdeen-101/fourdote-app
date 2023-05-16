@@ -26,7 +26,7 @@ const Contacts =  () => {
   message:'',
 
 }} 
-onSubmit={async ( values,actions) =>{
+onSubmit={async ( values,{resetForm}) =>{
 const res = await fetch("/api/hello",{
   method:"POST",
   cache:"no-store",
@@ -37,6 +37,7 @@ const res = await fetch("/api/hello",{
 ) 
 const resdata=await res.json()
 console.log(resdata)
+resetForm();
 }}
 
 >
